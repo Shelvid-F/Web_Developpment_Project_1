@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactez Ready-N pour démarrer votre préparation aux concours">
+    <title>Ready-N - Contact</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- En-tête avec navigation (identique aux autres pages) -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="img/logo.png" alt="Ready-N Logo">
+                    <span class="logo-text">Ready-N</span>
+                </div>
+                <nav class="main-nav" id="mainNav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="presentation.html">Présentation</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Hero Contact -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Contactez-Nous</h1>
+            <p class="subtitle">Un premier pas vers ta réussite</p>
+        </div>
+    </section>
+
+    <!-- Section Pourquoi Nous Contacter -->
+    <section class="contact-intro">
+        <div class="container">
+            <div class="contact-intro-content">
+                <h2>Pourquoi Nous Contacter Maintenant ?</h2>
+                <p>
+                    La préparation aux concours demande du temps, de la méthode et de l'anticipation. 
+                    Plus tôt tu commences, plus tu maximises tes chances de réussite.
+                </p>
+                <div class="contact-benefits">
+                    <div class="benefit">
+                        <span class="benefit-icon">✓</span>
+                        <p>Réponse rapide sous 24h</p>
+                    </div>
+                    <div class="benefit">
+                        <span class="benefit-icon">✓</span>
+                        <p>Conseils personnalisés gratuits</p>
+                    </div>
+                    <div class="benefit">
+                        <span class="benefit-icon">✓</span>
+                        <p>Sans engagement de ta part</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Formulaire de Contact -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="form-wrapper">
+                <div class="form-header">
+                    <h2>Remplissez le Formulaire</h2>
+                    <p>Tous les champs marqués d'un astérisque (*) sont obligatoires</p>
+                </div>
+
+                <form id="contactForm" novalidate>
+                    <!-- Nom Complet -->
+                    <div class="form-group">
+                        <label for="nom">Nom Complet *</label>
+                        <input 
+                            type="text" 
+                            id="nom" 
+                            name="nom" 
+                            required
+                            aria-required="true"
+                            aria-describedby="nomError">
+                        <span class="error-message" id="nomError" aria-live="polite"></span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required
+                            aria-required="true"
+                            aria-describedby="emailError">
+                        <span class="error-message" id="emailError" aria-live="polite"></span>
+                    </div>
+
+                    <!-- Téléphone -->
+                    <div class="form-group">
+                        <label for="telephone">Téléphone *</label>
+                        <input 
+                            type="tel" 
+                            id="telephone" 
+                            name="telephone" 
+                            placeholder="ex: 0712345678"
+                            required
+                            aria-required="true"
+                            aria-describedby="telephoneError">
+                        <span class="error-message" id="telephoneError" aria-live="polite"></span>
+                    </div>
+
+                    <!-- Sujet de Contact -->
+                    <div class="form-group">
+                        <label for="sujet">Sujet de Contact *</label>
+                        <select 
+                            id="sujet" 
+                            name="sujet" 
+                            required
+                            aria-required="true"
+                            aria-describedby="sujetError">
+                            <option value="">-- Sélectionnez un sujet --</option>
+                            <option value="information">Demande d'information</option>
+                            <option value="support">Support technique</option>
+                            <option value="reclamation">Réclamation</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                        <span class="error-message" id="sujetError" aria-live="polite"></span>
+                    </div>
+
+                    <!-- Champs Conditionnels -->
+                    <!-- Domaine d'intérêt (si Demande d'information) -->
+                    <div class="form-group conditional-field" id="domaineGroup" style="display: none;">
+                        <label for="domaine">Domaine d'Intérêt *</label>
+                        <input 
+                            type="text" 
+                            id="domaine" 
+                            name="domaine"
+                            placeholder="ex: Préparation ENSAE, Mathématiques, etc."
+                            aria-describedby="domaineError">
+                        <span class="error-message" id="domaineError" aria-live="polite"></span>
+                    </div>
+
+                    <!-- Numéro de Ticket (si Support technique) -->
+                    <div class="form-group conditional-field" id="ticketGroup" style="display: none;">
+                        <label for="ticket">Numéro de Ticket *</label>
+                        <input 
+                            type="text" 
+                            id="ticket" 
+                            name="ticket"
+                            placeholder="ex: TKT-12345"
+                            aria-describedby="ticketError">
+                        <span class="error-message" id="ticketError" aria-live="polite"></span>
+                    </div>
+
+                    <!-- Urgence (si Support technique) -->
+                    <div class="form-group conditional-field" id="urgenceGroup" style="display: none;">
+                        <label for="urgence">Niveau d'Urgence *</label>
+                        <select id="urgence" name="urgence" aria-describedby="urgenceError">
+                            <option value="">-- Sélectionnez l'urgence --</option>
+                            <option value="faible">Faible</option>
+                            <option value="moyenne">Moyenne</option>
+                            <option value="elevee">Élevée</option>
+                            <option value="critique">Critique</option>
+                        </select>
+                        <span class="error-message" id="urgenceError" aria-live="polite"></span>
+                    </div>
+
+                    <!-- Date de l'Incident (si Réclamation) -->
+                    <div class="form-group conditional-field" id="dateIncidentGroup" style="display: none;">
+                        <label for="dateIncident">Date de l'Incident *</label>
+                        <input 
+                            type="date" 
+                            id="dateIncident" 
+                            name="dateIncident"
+                            aria-describedby="dateIncidentError">
+                        <span class="error-message" id="dateIncidentError" aria-live="polite"></span>
+                    </div>
+
+                    <!-- Type de Demande (Radio Buttons) -->
+                    <div class="form-group">
+                        <fieldset>
+                            <legend>Type de Demande *</legend>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input 
+                                        type="radio" 
+                                        id="typeIndividuel" 
+                                        name="typeDemande" 
+                                        value="individuel"
+                                        required
+                                        aria-required="true">
+                                    <label for="typeIndividuel">Demande Individuelle</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input 
+                                        type="radio" 
+                                        id="typeGroupe" 
+                                        name="typeDemande" 
+                                        value="groupe"
+                                        required
+                                        aria-required="true">
+                                    <label for="typeGroupe">Demande de Groupe</label>
+                                </div>
+                            </div>
+                            <span class="error-message" id="typeDemandeError" aria-live="polite"></span>
+                        </fieldset>
+                    </div>
+
+                    <!-- Message -->
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            rows="6"
+                            placeholder="Décrivez votre demande en détail..."
+                            required
+                            aria-required="true"
+                            aria-describedby="messageError"></textarea>
+                        <span class="error-message" id="messageError" aria-live="polite"></span>
+                    </div>
+
+                    <!-- Bouton de Soumission -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            Envoyer Ma Demande
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Message de Succès (caché par défaut) -->
+                <div id="successMessage" class="success-message" style="display: none;" role="alert">
+                    <h3>✓ Message Envoyé avec Succès !</h3>
+                    <p>Merci pour votre message. Nous vous répondrons sous 24h.</p>
+                    <div id="recapitulatif" class="recapitulatif"></div>
+                </div>
+            </div>
+
+            <!-- Informations de Contact Additionnelles -->
+            <div class="contact-info-cards">
+                <div class="info-card">
+                    <div class="info-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>contact@ready-n.com</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📱</div>
+                    <h3>Téléphone</h3>
+                    <p>+221 77 095 05 98</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <h3>Adresse</h3>
+                    <p>Dakar, Sénégal</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Message Rassurant -->
+    <section class="reassurance">
+        <div class="container">
+            <div class="reassurance-content">
+                <p class="reassurance-text">
+                    <strong>Rassure-toi :</strong> Nous respectons ta vie privée. 
+                    Tes informations ne seront jamais partagées avec des tiers et 
+                    sont uniquement utilisées pour te répondre de manière personnalisée.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page (identique aux autres pages) -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Ready-N</h3>
+                    <p>
+                        Plateforme d'excellence académique dédiée à la réussite des étudiants 
+                        et professionnels ambitieux.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liens Rapides</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="presentation.html">Présentation</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><strong>Email :</strong> contact@ready-n.com</p>
+                    <p><strong>Téléphone :</strong> +221 77 095 05 98</p>
+                    <p><strong>Adresse :</strong> Dakar, Sénégal</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ready-N. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
